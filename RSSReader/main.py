@@ -108,7 +108,7 @@ class main (qt.QMainWindow):
             dic={}
             if p.bozo==0:
                 for i in p.entries:
-                    dic[i.title]=i.link
+                    dic[i.title + " by " + i.author + " date " + str(i.published)]=i.link
                 gui.Open(self,dic).exec()
             else:
                 qt.QMessageBox.information(self,"error",_("no RSS"))
